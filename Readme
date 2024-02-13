@@ -1,0 +1,1 @@
+oc new-app python~https://github.com/david-goudet/build-x-forward.git registry.access.redhat.com/ubi9/s2i-base
