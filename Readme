@@ -1,1 +1,5 @@
 oc new-app python~https://github.com/david-goudet/build-x-forward.git registry.access.redhat.com/ubi9/s2i-base
+oc expose svc/build-x-forward
+sudo podman run -d --rm --name haproxy -v "/home/quickcluster/haproxy:/etc/haproxy:Z" -p 8089:8080 registry.connect.redhat.com/haproxytech/haproxy:1.8.23-1624151643
+oc edit IngressController -n openshift-ingress-operator (https://docs.openshift.com/container-platform/4.12/networking/ingress-operator.html#nw-using-ingress-forwarded_configuring-ingress)
+=> work with Append
